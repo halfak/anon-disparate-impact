@@ -61,11 +61,13 @@ def run(rev_ids, score_processor, cache, verbose, debug):
     writer = mysqltsv.Writer(sys.stdout, headers=['rev_id', 'true_proba'])
 
     for rev_id, score in score_processor.score(rev_ids, cache=cache):
-        if 'error' in score:
+        if 'type' in score:
             sys.stderr.write("e")
-        else:
+        elif 'probability' in score:
             writer.write([rev_id, score['probability'][True]])
             sys.stderr.write(".")
+        else:
+            sys.stderr.write(json.dumps(score))
 
         sys.stderr.flush()
 
