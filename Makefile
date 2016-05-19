@@ -49,6 +49,20 @@ data_for_analysis: \
 		datasets/enwiki.rev_scores.damaging.linear_svc_balanced.epochfail.tsv \
 		datasets/enwiki.rev_scores.damaging.linear_svc_balanced.admin.tsv
 
+gb_data_for_analysis: \
+		datasets/enwiki.rev_scores.damaging.gradient_boosting.tsv \
+		datasets/enwiki.rev_scores.damaging.gradient_boosting.anon.tsv \
+		datasets/enwiki.rev_scores.damaging.gradient_boosting.newcomer.tsv \
+		datasets/enwiki.rev_scores.damaging.gradient_boosting.epochfail.tsv \
+		datasets/enwiki.rev_scores.damaging.gradient_boosting.admin.tsv
+
+linear_svc_data_for_analysis: \
+		datasets/enwiki.rev_scores.damaging.linear_svc_balanced.tsv \
+		datasets/enwiki.rev_scores.damaging.linear_svc_balanced.anon.tsv \
+		datasets/enwiki.rev_scores.damaging.linear_svc_balanced.newcomer.tsv \
+		datasets/enwiki.rev_scores.damaging.linear_svc_balanced.epochfail.tsv \
+		datasets/enwiki.rev_scores.damaging.linear_svc_balanced.admin.tsv
+
 
 datasets/enwiki.rev_damaging.20k_2015.tsv:
 	editquality fetch_labels \
